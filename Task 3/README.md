@@ -3,4 +3,4 @@ Create a hello world fastapi application. Create a Dockerfile for your fastapi h
 
 
 Step 1 :
-image.png
+
