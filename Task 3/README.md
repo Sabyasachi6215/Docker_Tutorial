@@ -17,18 +17,30 @@ Prerequisite :
 
 Step 1:
 Building the Docker Image :
+~~~bash
+docker build -t fastapi_app .
+~~~
 ![image](https://user-images.githubusercontent.com/54863241/195658808-1a01162f-7a68-415d-8d5e-dad479c04faf.png)
 
 Step 2:
 Running the image : Container Generation
+~~~bash
+docker run -d -p 8000:8000 fastapi_app
+~~~
 ![image](https://user-images.githubusercontent.com/54863241/195659452-1e8a1219-fffb-489e-ba0a-b3faa1fcd220.png)
 
 Step 3:
 Tagging the image file :
+~~~bash
+docker tag fastapi_app:latest sam08061988/fastapi_app
+~~~
 ![image](https://user-images.githubusercontent.com/54863241/195659743-8f2deb18-c5b9-47b2-9722-d82651fdfb47.png)
 
 Step 4:
 Pushing the image to DockerHub:
+~~~bash
+docker push sam08061988/fastapi_app
+~~~
 ![image](https://user-images.githubusercontent.com/54863241/195659865-a5834959-089f-4cf2-a352-d5a2c1fce42a.png)
 
 Results :
