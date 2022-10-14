@@ -1,0 +1,21 @@
+name: Docker Image CI
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v3
+    - name: Build the Docker image
+      run: |
+        echo "${{ secrets.DOCKER_TOKEN }}" | docker login -u "sam08061988" --password-stdin
+        docker image build -t sam08061988/flaskapi_app .
+        docker push sam08061988/flaskapi_app
