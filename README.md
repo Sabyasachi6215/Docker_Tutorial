@@ -13,3 +13,7 @@ Automate Assignment below task using github action.
 
 Build Docker Image
 Push Docker Image to Docker hub.
+
+Task 4 is solved in the below Repository :
+https://github.com/Sabyasachi6215/Docker_GitHubActions.git
+
