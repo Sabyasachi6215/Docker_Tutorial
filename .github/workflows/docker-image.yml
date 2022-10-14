@@ -2,9 +2,9 @@ name: Docker Image CI
 
 on:
   push:
-    branches: [ "main" ]
+    branches: [ "gitactions" ]
   pull_request:
-    branches: [ "main" ]
+    branches: [ "gitactions" ]
 
 jobs:
 
@@ -14,8 +14,9 @@ jobs:
 
     steps:
     - uses: actions/checkout@v3
-    - name: Build the Docker image
-      run: docker build . --file Dockerfile --tag my-image-name:$(date +%s)
-    - name: Push the Docker image
-      run: docker login -u sam08061988 -p ${{ secrets.DOCKER_TOKEN }} && docker push sam08061988/docker-image-autobuild:latest
+    - name: Build and Push image
+      run: |
+        echo "${{ secrets.DOCKERPW }}" | docker login -u "sam08061988" --password-stdin
+        docker image build -t sam08061988/flaskapi_app:latest .
+        docker push sam08061988/flaskapi_app:latest
     
