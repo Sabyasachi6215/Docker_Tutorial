@@ -14,7 +14,7 @@ jobs:
 
     steps:
     - uses: actions/checkout@v3
-    - name: Build the Docker image
+    - name: Build the Docker image here
       run: docker build . --file Dockerfile --tag my-image-name:$(date +%s)
     - name: Push the Docker image
       run: docker login -u sam08061988 -p ${{ secrets.DOCKER_TOKEN }} && docker push sam08061988/docker-image-autobuild:latest
